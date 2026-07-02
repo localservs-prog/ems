@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>EMS — Contact</title><style>body{font-family:Arial,sans-serif;max-width:700px;margin:0 auto;padding:20px;color:#333}h1{color:#1a1a2e;text-align:center}h2{color:#1a1a2e}a{color:#1a1a2e}nav{background:#1a1a2e;padding:10px;text-align:center;margin-bottom:20px}nav a{color:#fff;margin:0 15px;text-decoration:none}</style></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>EMS — Contact</title><style>body{font-family:Arial,sans-serif;max-width:700px;margin:0 auto;padding:20px;color:#333}h1{color:#1a1a2e;text-align:center}h2{color:#1a1a2e}a{color:#1a1a2e}nav{background:#1a1a2e;padding:10px;text-align:center;margin-bottom:20px}nav a{color:#fff;margin:0 15px;text-decoration:none}.form{border:1px solid #ddd;padding:20px;border-radius:8px;margin-top:20px}input,button{padding:10px;margin:5px 0;width:100%;box-sizing:border-box}button{background:#1a1a2e;color:#fff;border:none;cursor:pointer;font-size:16px}.checkbox-group{display:flex;align-items:flex-start;gap:8px;margin-top:10px}.checkbox-group input[type="checkbox"]{width:auto;margin-top:3px;flex-shrink:0}.consent{font-size:12px;color:#666}</style></head><body>
 <h1>EMS</h1><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
 <h2>Contact Us</h2>
 <p><strong>Address:</strong> 15239 Sunny Point St, Victorville, CA 92394</p>
@@ -7,4 +7,22 @@
 <p><strong>Website:</strong> <a href="https://localservs-prog.github.io/ems/">localservs-prog.github.io/ems</a></p>
 <h3>Business Hours</h3>
 <p>Monday – Friday: 8:00 AM – 6:00 PM PST<br>Saturday: 9:00 AM – 2:00 PM PST</p>
-<hr><small>© 2026 EMS. Trade name of Economy Moving Service LLC.</small></body></html>
+
+<div class="form">
+<h3>SMS Opt-In</h3>
+<form onsubmit="alert('Thank you! We will contact you shortly.');return false">
+<label>Phone Number (optional)</label>
+<input type="tel" placeholder="+1 (555) 123-4567">
+<div class="checkbox-group">
+<input type="checkbox" id="sms-consent">
+<label for="sms-consent" class="consent">
+<strong>SMS Consent:</strong> By checking this box and providing your phone number, you agree to receive text messages from EMS including <strong>customer care inquiries, account notifications, delivery/pickup updates, and marketing/promotional offers.</strong> Message frequency: 2-10 messages per month. Message &amp; data rates may apply. Reply HELP for help or STOP to opt out at any time. See our <a href="privacy.html">Privacy Policy</a>.
+</label>
+</div>
+<br>
+<strong style="font-size:12px">No mobile information will be sold or shared with third parties for promotional or marketing purposes.</strong>
+<button type="submit">Submit</button>
+</form>
+</div>
+
+<hr><small>&copy; 2026 EMS. Trade name of Economy Moving Service LLC.</small></body></html>
