@@ -103,6 +103,15 @@
   .msg{display:none;padding:14px 16px;border-radius:10px;margin-bottom:16px;font-weight:600}
   .msg.ok{display:block;background:#e7f7ec;color:#157347}
   .msg.err{display:block;background:#fdecec;color:#b42318}
+
+  /* hero split + gallery + reviews */
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-figure{order:-1;max-width:420px;margin:0 auto}}
+  .hero-figure img{width:100%;height:auto;border-radius:20px;box-shadow:0 22px 50px rgba(0,0,0,.28);display:block}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px;display:block;border:1px solid var(--line)}
+  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .reviews img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;background:#fff}
 </style>
 </head>
 <body>
@@ -118,7 +127,8 @@
 </header>
 
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
     <h1>Moving in LA, made simple &amp; flat-rate.</h1>
     <p>Professional movers for apartments, homes and offices across Los Angeles, Orange County, Inland Empire and Ventura County. Same-day and next-day available.</p>
     <div class="cta">
@@ -131,8 +141,29 @@
       <div><b>Same-day</b>&amp; next-day moves</div>
       <div><b>5★ service</b>friendly, careful crew</div>
     </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="images/hero.webp" alt="LocalServs Moving crew loading a truck in Los Angeles" width="675" height="900" fetchpriority="high">
+    </figure>
   </div>
 </section>
+
+<section id="work" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="sec-title">Recent moves</h2>
+    <p class="sec-sub">Real jobs and real crews — not stock photos.</p>
+    <div class="gallery">
+      <img src="images/p1.webp" alt="Moving job in Los Angeles — photo 1" loading="lazy">
+      <img src="images/p2.webp" alt="Moving job in Los Angeles — photo 2" loading="lazy">
+      <img src="images/p3.webp" alt="Moving job in Los Angeles — photo 3" loading="lazy">
+      <img src="images/p4.webp" alt="Moving job in Los Angeles — photo 4" loading="lazy">
+      <img src="images/p5.webp" alt="Moving job in Los Angeles — photo 5" loading="lazy">
+      <img src="images/p6.webp" alt="Moving job in Los Angeles — photo 6" loading="lazy">
+      <img src="images/p7.webp" alt="Moving job in Los Angeles — photo 7" loading="lazy">
+    </div>
+  </div>
+</section>
+
 
 <section id="prices">
   <div class="wrap">
@@ -227,6 +258,19 @@
   </div>
 </section>
 
+
+<section id="reviews">
+  <div class="wrap">
+    <h2 class="sec-title">What customers say</h2>
+    <p class="sec-sub">Screenshots from real customers.</p>
+    <div class="reviews">
+      <img src="images/r1.webp" alt="Customer review 1" loading="lazy">
+      <img src="images/r2.webp" alt="Customer review 2" loading="lazy">
+      <img src="images/r3.webp" alt="Customer review 3" loading="lazy">
+      <img src="images/r4.webp" alt="Customer review 4" loading="lazy">
+    </div>
+  </div>
+</section>
 <section id="faq">
   <div class="wrap">
     <h2 class="sec-title">FAQ</h2>
