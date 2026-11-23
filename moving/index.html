@@ -3,20 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LocalServs Moving — Flat-Rate Movers in Los Angeles | Free Quote</title>
+<title>Local Moving Services — Flat-Rate Movers in Los Angeles | Free Quote</title>
 <!-- TODO: заменить бренд/название компании одним поиском -->
 <meta name="description" content="Affordable flat-rate movers serving Los Angeles, Orange County, Inland Empire and Ventura County. 2 men + truck from $285 (2 hr min). Same-day and next-day moves. Get a free quote.">
 <meta name="keywords" content="movers, moving company, los angeles movers, cheap movers, same day movers, apartment movers, last minute movers, furniture delivery, labor only movers, box truck, loading unloading, packing">
 <meta property="og:type" content="website">
-<meta property="og:title" content="LocalServs Moving — Flat-Rate Movers in Los Angeles">
+<meta property="og:title" content="Local Moving Services — Flat-Rate Movers in Los Angeles">
 <meta property="og:description" content="2 men + truck from $285. Same-day and next-day moves across LA, Orange County, Inland Empire, Ventura County. Free quote.">
-<meta property="og:url" content="https://localservs-prog.github.io/ems/move/">
+<meta property="og:url" content="https://localservs-prog.github.io/ems/moving/">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://localservs-prog.github.io/ems/moving/">
 <meta name="theme-color" content="#0b5ed7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "LocalServs Moving",
+  "name": "Local Moving Services",
   "description": "Flat-rate local moving and furniture delivery in the Los Angeles area.",
   "telephone": "+1-323-285-8092",
   "email": "localservs@gmail.com",
@@ -104,12 +106,23 @@
   .msg.ok{display:block;background:#e7f7ec;color:#157347}
   .msg.err{display:block;background:#fdecec;color:#b42318}
 </style>
+<script>
+  (function (w, d, s, u) {
+    if (w.oaiq) return;
+    var q = function () { q.q.push(arguments); };
+    q.q = []; w.oaiq = q;
+    var js = d.createElement(s); js.async = true; js.src = u;
+    var f = d.getElementsByTagName(s)[0];
+    f.parentNode.insertBefore(js, f);
+  })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+  oaiq("init", { pixelId: "PZ7xpf48qnciCX3y7MzhGf", debug: true });
+</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <div class="logo">LocalServs<span> Moving</span></div>
+    <div class="logo">Local<span> Moving Services</span></div>
     <div class="nav-right">
       <a class="phone" href="tel:+13232858092">(323) 285-8092</a>
       <a class="btn btn-primary" href="#quote">Free Quote</a>
@@ -240,7 +253,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <div class="logo" style="color:#fff">LocalServs Moving</div>
+      <div class="logo" style="color:#fff">Local Moving Services</div>
       <p style="margin-top:8px">Flat-rate movers serving Greater Los Angeles.</p>
     </div>
     <div>
@@ -250,7 +263,7 @@
     <div>
       <p><a href="#quote">Free quote</a></p>
       <p><a href="#prices">Prices</a></p>
-      <p><a href="../privacy.html">Privacy policy</a></p>
+      <p><a href="./privacy.html">Privacy policy</a></p>
     </div>
   </div>
 </footer>
@@ -280,19 +293,50 @@ fbq('init','PIXEL_ID');fbq('track','PageView');
     const data = Object.fromEntries(new FormData(form).entries());
     msg.className = 'msg'; msg.textContent = 'Sending…';
     try {
-      const res = await fetch('/api/lead', {
+      const res = await fetch('https://localservs.xyz/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       msg.className = 'msg ok'; msg.textContent = 'Thanks! We received your request and will contact you shortly.';
+      if (window.lmsLead) window.lmsLead();
+      if (window.oaiq) oaiq("measure", "lead_created", { type: "customer_action" });
       form.reset();
     } catch (err) {
       msg.className = 'msg err';
       msg.textContent = 'Something went wrong — please call or text us at (323) 285-8092.';
     }
   });
+</script>
+
+<!-- ANALYTICS: заполнить ID и раскомментировать ничего не нужно — скрипт сам подключит -->
+<script>
+  window.LMS_TRACK = { ga4: "", pixel: "" }; // <- сюда ID: "G-XXXXXXX" и "1234567890"
+</script>
+<script>
+(function(){
+  var t = window.LMS_TRACK || {};
+  if (t.ga4) {
+    var s=document.createElement('script'); s.async=1;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+t.ga4; document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments);};
+    gtag('js', new Date()); gtag('config', t.ga4);
+  }
+  if (t.pixel) {
+    !function(f,b,e,v,n,t2,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t2=b.createElement(e);t2.async=!0;
+    t2.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t2,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', t.pixel); fbq('track', 'PageView');
+  }
+  window.lmsLead = function(){
+    try { if (window.gtag) gtag('event','generate_lead',{value:0,currency:'USD'}); } catch(e){}
+    try { if (window.fbq) fbq('track','Lead'); } catch(e){}
+  };
+})();
 </script>
 </body>
 </html>
